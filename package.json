@@ -4,7 +4,7 @@
   "description": "For practice react,flux and coffee",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/back/index.js"
   },
   "dependencies": {
     "express": "4.9.x",
