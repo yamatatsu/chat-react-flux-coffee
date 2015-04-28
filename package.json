@@ -1,0 +1,38 @@
+{
+  "name": "chat-react-flux-coffee",
+  "version": "0.0.1",
+  "description": "For practice react,flux and coffee",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "4.9.x",
+    "gulp": "^3.8.11",
+    "gulp-nodemon": "2.0.x",
+    "gulp-plumber": "1.0.x",
+    "del": "1.1.x",
+    "browserify": "8.0.x",
+    "coffeeify": "1.1.x",
+    "vinyl-transform": "1.0.x",
+    "run-sequence": "1.0.x",
+    "underscore": "1.8.x",
+    "coffee-script": "1.9.x"
+  },
+  "engines": {
+    "node": "0.11.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yamatatsu/chat-react-flux-coffee"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "react",
+    "flux",
+    "coffee"
+  ],
+  "license": "MIT"
+}
