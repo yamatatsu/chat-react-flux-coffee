@@ -8,16 +8,19 @@
   },
   "dependencies": {
     "express": "4.12.x",
-    "gulp": "^3.8.11",
-    "gulp-nodemon": "2.0.x",
-    "gulp-plumber": "1.0.x",
+    "react": "0.13.x",
+    "underscore": "1.8.x"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.x",
+    "coffee-reactify": "^3.0.x",
+    "coffee-script": "^1.9.x",
     "del": "1.1.x",
-    "browserify": "8.0.x",
-    "coffeeify": "1.1.x",
-    "vinyl-transform": "1.0.x",
+    "glob": "5.0.x",
+    "gulp": "3.8.x",
+    "gulp-nodemon": "2.0.x",
     "run-sequence": "1.0.x",
-    "underscore": "1.8.x",
-    "coffee-script": "1.9.x"
+    "vinyl-source-stream": "^1.1.x"
   },
   "engines": {
     "node": "0.11.x"

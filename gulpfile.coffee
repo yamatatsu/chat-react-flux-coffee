@@ -1,9 +1,8 @@
-gulp        = require 'gulp'
-plumber     = require 'gulp-plumber'
-browserify  = require 'browserify'
-coffeeify   = require 'coffeeify'
-vinylTransform = require 'vinyl-transform'
 del         = require 'del'
+gulp        = require 'gulp'
+glob        = require 'glob'
+browserify  = require 'browserify'
+source      = require 'vinyl-source-stream'
 runSequence = require 'run-sequence'
 
 
@@ -11,22 +10,24 @@ runSequence = require 'run-sequence'
 gulp.task 'clean', (cb) ->
 	del ['build/*'], cb
 
+# jsをビルドしてくれる人
 gulp.task 'js', ->
-	gulp.src './src-front/js/*.js'
-		.pipe plumber()
-		.pipe vinylTransform (filename) ->
-			return browserify filename
-				.transform babelify
-				.bundle()
+	srcFiles = glob.sync './src/front/js/*.coffee'
+	return browserify
+			entries: srcFiles
+			transform: ['coffee-reactify']
+		.bundle()
+		.pipe source 'bundle.js'
 		.pipe gulp.dest './build/public/js'
 
-
-# 監視→ビルドしてくれる人
+# 監視してくれる人
 gulp.task 'watch', ->
-	gulp.watch './src-front/js/**/*.js', ['js']
-	gulp.watch './src-front/scss/**/*.sass', ['css']
+	gulp.watch './src/front/js/**/*.coffee', ['js']
 
-# ビルド。heroku用
+############
+# まとめ
+
+# heroku用
 gulp.task 'deploy', (callback) ->
   return runSequence 'clean', 'js', callback
 
