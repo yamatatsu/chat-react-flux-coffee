@@ -7,7 +7,7 @@
     "start": "node src/back/index.js"
   },
   "dependencies": {
-    "express": "4.9.x",
+    "express": "4.12.x",
     "gulp": "^3.8.11",
     "gulp-nodemon": "2.0.x",
     "gulp-plumber": "1.0.x",
